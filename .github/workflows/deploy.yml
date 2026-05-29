@@ -19,6 +19,7 @@ jobs:
 
       - run: npm ci
       - run: npm run build
+      - run: rm -f ./dist/CNAME
 
       - name: Deploy to gh-pages
         uses: peaceiris/actions-gh-pages@v3
