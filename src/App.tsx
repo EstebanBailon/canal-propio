@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
+import { HashRouter, Routes, Route, Navigate } from 'react-router-dom';
 import { AppProvider } from './data/store';
 import { TopNav } from './components/TopNav';
 
@@ -35,7 +35,7 @@ function ShellWithNav({ children }: { children: React.ReactNode }) {
 export default function App() {
   return (
     <AppProvider>
-      <BrowserRouter>
+      <HashRouter>
         <Routes>
           <Route path="/" element={<ShellWithNav><LandingPage /></ShellWithNav>} />
           <Route path="/estrategia" element={<ShellWithNav><StrategyPage /></ShellWithNav>} />
@@ -62,7 +62,7 @@ export default function App() {
 
           <Route path="*" element={<Navigate to="/" replace />} />
         </Routes>
-      </BrowserRouter>
+      </HashRouter>
     </AppProvider>
   );
 }
